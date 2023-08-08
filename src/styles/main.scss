@@ -1,7 +1,14 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+html {
+  font-family: Roboto, sans-serif;
+}
 
 body {
-  background: $c-gray;
+  margin: 0;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+@import "_header.scss";
+@import "_catalog.scss";

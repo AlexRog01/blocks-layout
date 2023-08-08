@@ -1,0 +1,63 @@
+$card-width: 600px;
+$card-height: 300px;
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(2, $card-width);
+  gap: 20px;
+  justify-content: center;
+
+  @media (max-width: 1245px) {
+    grid-template-columns: repeat(1, $card-width);
+  }
+
+  &__card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $card-width;
+    height: $card-height;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgb(160,212,198);
+    transition: transform 1s ease-in-out;
+
+    &:not(:nth-child(4n)) {
+      margin-right: 48px;
+    }
+
+    &:hover {
+      color: #34568b;
+      cursor: pointer;
+      animation-duration: 0.5s;
+      animation-timing-function: ease;
+      animation-iteration-count: 1;
+      animation-name: shake;
+    }
+  }
+
+  @media (max-width: 620px) {
+    $card-width: 300px;
+
+    grid-template-columns: repeat(1, $card-width);
+
+    &__card {
+      width: $card-width;
+    }
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(2deg);
+  }
+  25% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+}
